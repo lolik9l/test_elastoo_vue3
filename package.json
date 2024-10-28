@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
+    "build:production": "cross-env VITE_APP_ROOT_URL=/test_elastoo_vue3 VITE_API_URL=https://jsonplaceholder.typicode.com vite build",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
@@ -22,10 +23,13 @@
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.17.0",
+    "@vitejs/plugin-basic-ssl": "^1.1.0",
     "@vitejs/plugin-vue": "^5.1.4",
     "@vue/eslint-config-prettier": "^10.0.0",
     "@vue/eslint-config-typescript": "^14.1.1",
     "@vue/tsconfig": "^0.5.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
     "eslint": "^9.13.0",
     "eslint-plugin-vue": "^9.29.0",
     "npm-run-all2": "^7.0.1",
