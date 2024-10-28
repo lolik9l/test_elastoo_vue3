@@ -1,0 +1,142 @@
+:root {
+  --base-width: #{get-width($base-size)};
+  --base-height: #{get-height($base-size)};
+
+  @media (orientation: landscape) {
+    --base-width: #{get-height($base-size)};
+  }
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  color: rgb(var(--color-white));
+  background-color: rgb(var(--color-primary-dark));
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight);
+  font-size: rel-max(16);
+  line-height: normal;
+  -webkit-text-size-adjust: 100%;
+  /* fix bug font-size for Safari */
+}
+
+a,
+button {
+  pointer-events: all;
+  cursor: pointer;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.view {
+  position: relative;
+  height: 100%;
+}
+
+.view-enter-active,
+.view-leave-active {
+  transition: opacity var(--t-default);
+}
+
+.view-enter-from,
+.view-leave-to {
+  opacity: 0;
+}
+
+.title {
+  font-size: rel(20);
+  font-weight: bold;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  background-color: transparent;
+  align-items: center;
+  color: rgb(var(--color-primary-dark));
+  font-size: rel-max(16);
+  font-weight: 700;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  transition: var(--t-default);
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+  &:hover {
+    scale: 1.01;
+  }
+}
+
+.button-primary,
+.button-outline-primary {
+  padding: rel(4) rel(20);
+  gap: rel(10);
+  min-height: rel-h(50);
+  border-radius: rel(39);
+}
+
+.button-primary {
+  background-color: rgb(var(--color-white));
+}
+
+.button-outline-primary {
+  color: rgb(var(--color-white));
+  border: 1px solid rgb(var(--color-white));
+}
+
+.icon {
+  min-width: rel(20);
+  max-width: rel(25);
+  min-height: rel(20);
+  max-height: rel(25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg,
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(var(--color-blue-light) / 0.25);
+  z-index: 9999;
+
+  .spinner {
+    width: rel(50);
+    height: rel(50);
+    border: 5px solid rgba(var(--color-white) / 0.8);
+    border-top: 5px solid rgba(var(--color-blue-dark) / 0.9);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

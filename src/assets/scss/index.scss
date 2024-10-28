@@ -1,0 +1,13 @@
+// base
+@import 'base/fonts.scss';
+@import 'base/vars.scss';
+@import 'base/functions.scss';
+@import 'base/normalize.scss';
+@import 'base/main.scss';
+
+// components
+@import 'components/posts-home.scss';
+@import 'components/post-home.scss';
+@import 'components/post-create.scss';
+@import 'components/post-edit.scss';
+@import 'components/post-delete.scss';

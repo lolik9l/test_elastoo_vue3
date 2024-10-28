@@ -1,0 +1,9 @@
+.posts-home {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 90vh;
+    overflow: auto;
+    padding: rel-max(12);
+  }
+}

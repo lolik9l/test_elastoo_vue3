@@ -1,0 +1,31 @@
+// Sizes
+$w-figma: 1440px;
+$h-figma: 840px;
+$base-size: 10px;
+$min-size: 14px;
+
+:root {
+  // colors
+  --color-white: 255 255 255;
+  --color-black: 0 0 0;
+  --color-blue-light: 91 177 251;
+  --color-blue-dark: 1 147 233;
+  --color-green-light: 73 226 88;
+  --color-green-dark: 31 174 97;
+  --color-red-light: 242 65 62;
+  --color-red-dark: 172 8 3;
+  --color-red: 255 0 0;
+  --color-pink: 235, 45, 140;
+  --color-primary-dark: 43 48 55;
+  --color-light: 214, 214, 214;
+
+  // fonts
+  --font-body-family: 'Inter', sans-serif;
+  --font-body-style: normal;
+  --font-body-weight: 400;
+
+  // transitions
+  --t-dur: 0.3s;
+  --t-func: ease-in-out;
+  --t-default: var(--t-func) var(--t-dur);
+}

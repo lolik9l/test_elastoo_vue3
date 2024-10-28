@@ -1,0 +1,41 @@
+@use 'sass:math';
+
+@function unit($value) {
+  @return math.div($value + 0px, 1px);
+}
+
+@function rel($size, $base-size-variable: '--base-width') {
+  @return unquote(
+    'calc(#{unit($size)} * var(#{$base-size-variable}, #{$base-size}) / #{unit($base-size)})'
+  );
+}
+
+@function rel-h($size, $base-size-variable: '--base-height') {
+  @return rel($size, $base-size-variable);
+}
+
+@function rel-max(
+  $size,
+  $base-size-variable: '--base-width',
+  $min-size: $min-size
+) {
+  @return unquote(
+    'max(#{rel($size, $base-size-variable)}, #{unit($min-size)}px)'
+  );
+}
+
+@function rel-h-max(
+  $size,
+  $base-size-variable: '--base-height',
+  $min-size: $min-size
+) {
+  @return rel-max($size, $base-size-variable, $min-size);
+}
+
+@function get-width($value) {
+  @return calc(#{unit($value)} / unit($w-figma) * 100dvw);
+}
+
+@function get-height($value) {
+  @return calc(#{unit($value)} / unit($h-figma) * 100dvh);
+}

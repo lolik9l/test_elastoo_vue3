@@ -1,0 +1,27 @@
+.post-home {
+  width: 33%;
+  min-width: 380px;
+  padding: rel(16);
+
+  @media (max-width: 540px) {
+    width: 100%;
+    min-width: initial;
+  }
+
+  &__wrap {
+    padding: rel(20);
+    border: 1px solid rgb(var(--color-blue-light));
+    transition: var(--t-default);
+    border-radius: 12px;
+
+    &.editable {
+      border-color: rgb(var(--color-red-light));
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: rel(10);
+  }
+}
