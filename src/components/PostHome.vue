@@ -48,6 +48,13 @@ export default {
             default: () => ({}) as Post,
         },
     },
+    watch: {
+        post(oldVal, newVal) {
+            if (oldVal.id !== newVal.id) {
+                this.editMode = 'view';
+            }
+        },
+    },
     components: {
         PostEdit,
         PostDelete,
