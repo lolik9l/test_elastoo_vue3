@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
-    "build:production": "cross-env VITE_APP_ROOT_URL=/test_elastoo_vue3 vite build",
+    "build:production": "cross-env VITE_APP_ROOT_URL=/test_elastoo_vue3 VITE_API_URL=https://jsonplaceholder.typicode.com vite build",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
