@@ -39,7 +39,7 @@ export default {
             if (this.editMode === 'view') {
                 this.$emit('change-mode', 'edit');
             } else if (this.editMode === 'edit') {
-                await this.editPost(this.post);
+                await this.editPost(this.post as Post);
                 this.$emit('change-mode', 'view');
             }
         },
