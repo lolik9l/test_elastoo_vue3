@@ -17,6 +17,7 @@ export const usePostsStore = defineStore({
         } as Post,
     }),
     actions: {
+        // For easy toggle Loading
         async executeWithLoading(action: () => Promise<unknown>) {
             this.loading = true;
 

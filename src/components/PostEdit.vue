@@ -36,6 +36,7 @@ export default {
     methods: {
         ...mapActions(usePostsStore, ['editPost']),
         async actionEditPost() {
+            // Switch type and update the data, if the mod is already in ‘edit’
             if (this.editMode === 'view') {
                 this.$emit('change-mode', 'edit');
             } else if (this.editMode === 'edit') {
