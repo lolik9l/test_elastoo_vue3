@@ -1,10 +1,17 @@
+import dotenv from 'dotenv';
+
 import { fileURLToPath, URL } from 'node:url';
 
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import basicSsl from '@vitejs/plugin-basic-ssl';
+
+// for loading .env variables
+dotenv.config();
 
 export default defineConfig({
-    plugins: [vue()],
+    base: process.env.VITE_APP_ROOT_URL || '',
+    plugins: [basicSsl(), vue()],
     server: {
         host: true,
         headers: {
